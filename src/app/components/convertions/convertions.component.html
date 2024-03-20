@@ -1,0 +1,20 @@
+<div class="data">
+    <h1>{{tittle}}</h1>
+    <div class="form-inputs">
+        <div class="grados">
+            <label for="grados-val">Grados:</label>
+            <input type="number" id="grados-val" [formControl]="gradosVal">
+        </div>
+        <div class="tipo">
+            <label for="type-val">Tipo:</label>
+            <select name="type-grados" id="type-val" [formControl]="typeConvertion">
+                <option value="" selected>--</option>
+                <option value="1">Celcius</option>
+                <option value="2">Fahrenheit</option>
+            </select>
+        </div>
+    </div>
+    <div class="eval-result">
+        <button (click)="generateConvertion()">Grabar</button>
+    </div>
+</div>

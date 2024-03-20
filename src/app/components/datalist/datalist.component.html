@@ -1,0 +1,27 @@
+<app-convertions (dataInput)="addData($event)"></app-convertions>
+
+<div class="data">
+    <h1>Lista de Entradas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Celsius</th>
+                <th>Fahrenheit</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (grados of dataValues; track grados.getCelcius()) {
+                <tr>
+                    <td>{{grados.getCelcius()}}</td>
+                    <td>{{grados.getFahrenheit()}}</td>
+                    <td><button (click)="deleteItem(grados)"><i class="fas fa-trash-alt"></i></button></td>
+                </tr>
+            } @empty {
+                <tr>
+                    <td colspan="3">No existen datos.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
