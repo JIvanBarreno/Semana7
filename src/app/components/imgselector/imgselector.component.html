@@ -1,0 +1,11 @@
+<div class="list-options">
+    <label for="image-option">Tipo:</label>
+    <select name="type-grados" id="image-option" [formControl]="imgSelected">
+        @for (item of sourceImages; track item) {
+            <option value="{{item['value']}}" >{{item['name']}}</option>
+        }
+    </select>
+</div>
+<div class="eval-result">
+    <button (click)="selectImage()">Grabar</button>
+</div>
